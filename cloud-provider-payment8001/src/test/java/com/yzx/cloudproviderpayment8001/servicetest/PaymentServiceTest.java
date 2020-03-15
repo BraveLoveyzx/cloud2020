@@ -16,10 +16,30 @@ public class PaymentServiceTest {
     @Autowired
     private PaymentService paymentService;
 
+    /**
+     * @Description: 根据主键查询
+     * @Param:
+     * @return:
+     * @Author: mastermind
+     * @Date: 2020-03-15 18:42
+     */
     @Test
     public void selectTest() {
         Payment byId = paymentService.getById(1L);
         System.err.println(byId);
+    }
+
+    /**
+     * @Description: 添加测试
+     * @Param:
+     * @return:
+     * @Author: mastermind
+     * @Date: 2020-03-15 18:42
+     */
+    @Test
+    public void addTest() {
+
+        paymentService.save(new Payment().setSerial("mastermind"));
 
     }
 }
