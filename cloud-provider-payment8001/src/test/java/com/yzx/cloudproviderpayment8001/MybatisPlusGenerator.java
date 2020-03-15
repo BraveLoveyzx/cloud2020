@@ -37,24 +37,24 @@ public class MybatisPlusGenerator {
                 return ipt;
             }
         }
-
         throw new MybatisPlusException("请输入正确的" + tip + "！");
     }
 
     public static void main(String[] args) {
 
+        //数据库链接地址
+        String dbUrl = "jdbc:mysql://127.0.0.1:3306/cloud2020";
+        String dbUserName = "root";
+        String dbPassword = "123456";
+        //数据库前缀
+        String dbPrefix = "yzx_";
         //公共文件项目名称
-        //当前文件项目名称
-
         String commpath = "cloudcommon";
+        //当前文件项目名称
         String downpath = "cloudproviderpayment8001";
 
         String projectPath = System.getProperty("user.dir") + "/cloud-provider-payment8001";
         String commonPath = System.getProperty("user.dir") + "/cloud-common";
-
-
-
-
         // 全局配置
         GlobalConfig globalConfig = new GlobalConfig();
         globalConfig.setAuthor("mastermind") // 作者
@@ -70,9 +70,9 @@ public class MybatisPlusGenerator {
         DataSourceConfig dataSourceConfig = new DataSourceConfig();
         dataSourceConfig.setDbType(DbType.MYSQL) // 设置数据库类型
                 .setDriverName("com.mysql.jdbc.Driver")
-                .setUrl("jdbc:mysql://192.168.1.7:3306/cache")
-                .setUsername("root")
-                .setPassword("123456")
+                .setUrl(dbUrl)
+                .setUsername(dbUserName)
+                .setPassword(dbPassword)
                 .setTypeConvert(new MySqlTypeConvert() {
                     @Override
                     public DbColumnType processTypeConvert(GlobalConfig globalConfig, String fieldType) {
@@ -88,7 +88,7 @@ public class MybatisPlusGenerator {
         strategyConfig
                 .setNaming(NamingStrategy.underline_to_camel) // 数据库表映射到实体的命名策略
                 .setColumnNaming(NamingStrategy.underline_to_camel)
-                .setTablePrefix("ecinx_") // 指定表的前缀
+                .setTablePrefix(dbPrefix) // 指定表的前缀
                 .setInclude(scanner("表名"))
                 .setEntityLombokModel(true)
                 .setRestControllerStyle(true)
@@ -97,16 +97,16 @@ public class MybatisPlusGenerator {
         // 包名策略配置
         PackageConfig packageConfig = new PackageConfig();
         Map<String, String> map = new HashMap<String, String>();
-        map.put("entity_path", commonPath + "/src/main/java/com/yzx/"+commpath+"/entity/core");
-        map.put("service_path", projectPath + "/src/main/java/com/yzx/"+downpath+"/service");
-        map.put("service_impl_path", projectPath + "/src/main/java/com/yzx/"+downpath+"/service/impl");
-        map.put("mapper_path", projectPath + "/src/main/java/com/yzx/"+downpath+"/mapper");
+        map.put("entity_path", commonPath + "/src/main/java/com/yzx/" + commpath + "/entity/" + downpath + "");
+        map.put("service_path", projectPath + "/src/main/java/com/yzx/" + downpath + "/service");
+        map.put("service_impl_path", projectPath + "/src/main/java/com/yzx/" + downpath + "/service/impl");
+        map.put("mapper_path", projectPath + "/src/main/java/com/yzx/" + downpath + "/mapper");
         map.put("xml_path", projectPath + "/src/main/resources/mapper");
         packageConfig
-                .setEntity("com.yzx."+commpath+".entity.core")
-                .setService("com.yzx."+downpath+".service")
-                .setServiceImpl("com.yzx."+downpath+".service.impl")
-                .setMapper("com.yzx."+downpath+".mapper")
+                .setEntity("com.yzx." + commpath + ".entity." + downpath + "")
+                .setService("com.yzx." + downpath + ".service")
+                .setServiceImpl("com.yzx." + downpath + ".service.impl")
+                .setMapper("com.yzx." + downpath + ".mapper")
                 .setParent("")
                 .setPathInfo(map);
 
