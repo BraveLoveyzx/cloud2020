@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yzx.cloudproviderpayment8001.mapper.EwDataStorageMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.yzx.cloudcommon.entity.core.EwDataStorage">
+        <id column="data_storage_id" property="dataStorageId" />
+        <result column="tenant_id" property="tenantId" />
+        <result column="server_name" property="serverName" />
+        <result column="delivery_code" property="deliveryCode" />
+        <result column="delivery_id" property="deliveryId" />
+        <result column="declare_order_code" property="declareOrderCode" />
+        <result column="order_id" property="orderId" />
+        <result column="shop_id" property="shopId" />
+        <result column="shop_platform_id" property="shopPlatformId" />
+        <result column="warehouse_id" property="warehouseId" />
+        <result column="external_warehouse_id" property="externalWarehouseId" />
+        <result column="is_confirm" property="isConfirm" />
+        <result column="expansion_data" property="expansionData" />
+        <result column="last_send_message" property="lastSendMessage" />
+        <result column="is_push_again" property="isPushAgain" />
+        <result column="push_again_warehouse_name" property="pushAgainWarehouseName" />
+        <result column="push_again_warehouse_code" property="pushAgainWarehouseCode" />
+        <result column="is_push_again_status" property="isPushAgainStatus" />
+        <result column="extended_data" property="extendedData" />
+        <result column="confirm_time" property="confirmTime" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        data_storage_id, tenant_id, server_name, delivery_code, delivery_id, declare_order_code, order_id, shop_id, shop_platform_id, warehouse_id, external_warehouse_id, is_confirm, expansion_data, last_send_message, is_push_again, push_again_warehouse_name, push_again_warehouse_code, is_push_again_status, extended_data, confirm_time, create_time, update_time
+    </sql>
+
+</mapper>
