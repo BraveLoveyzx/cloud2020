@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Author: mastermind
  * @Date: 2020-03-15 18:02
  */
-@SpringBootApplication()
+@SpringBootApplication
 @MapperScan(basePackages = "com.yzx.cloudproviderpayment8001.mapper")
 public class CloudProviderPayment8001Application {
 
