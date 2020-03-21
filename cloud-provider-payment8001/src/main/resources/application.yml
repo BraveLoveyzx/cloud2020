@@ -1,3 +1,4 @@
+
 server:
   port: 8082
 spring:
@@ -21,8 +22,19 @@ spring:
       test-while-idle: true
       time-between-eviction-runs-millis: 60000
       min-evictable-idle-time-millis: 300000
+  application:
+    name: cloud-provider-payment
+
 
 #打印sql日志
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#eureka注册
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
