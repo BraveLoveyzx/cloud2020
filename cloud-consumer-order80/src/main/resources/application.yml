@@ -4,11 +4,16 @@ server:
 spring:
   application:
     name: cloud-consumer-order
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
 
-#eureka注册
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:7001/eureka/
+
+##eureka注册
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: http://localhost:7001/eureka/

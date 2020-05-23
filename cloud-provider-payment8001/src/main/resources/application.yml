@@ -1,8 +1,16 @@
-
 server:
   port: 8082
+
 spring:
-#  数据库链接
+  application:
+    name: cloud-provider-payment
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+  #  数据库链接
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/cloud2020?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
     username: root
@@ -22,19 +30,17 @@ spring:
       test-while-idle: true
       time-between-eviction-runs-millis: 60000
       min-evictable-idle-time-millis: 300000
-  application:
-    name: cloud-provider-payment
 
 
 #打印sql日志
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-
-#eureka注册
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:7001/eureka/
+#
+##eureka注册
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: http://localhost:7001/eureka/
