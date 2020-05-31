@@ -21,6 +21,9 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <skipTests>true</skipTests>
+        <dockerfile.maven.version>1.4.4</dockerfile.maven.version>
+
+
     </properties>
 
     <modules>
