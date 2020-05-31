@@ -18,7 +18,6 @@ public class MyWebSocketHandler implements WebSocketHandler  {
      * @Author: mastermind
      * @Date: 2020-05-17 10:51
      */
-    @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
 
         String path = session.getUri().getPath();
@@ -37,12 +36,10 @@ public class MyWebSocketHandler implements WebSocketHandler  {
      * @Author: mastermind
      * @Date: 2020-05-17 10:52
      */
-    @Override
     public void handleMessage(WebSocketSession session, WebSocketMessage<?> message) throws Exception {
         System.err.println("MyWebSocketHandler----handleMessage");
     }
 
-    @Override
     public void handleTransportError(WebSocketSession session, Throwable exception) throws Exception {
         System.err.println("MyWebSocketHandler----handleTransportError");
 
@@ -55,7 +52,6 @@ public class MyWebSocketHandler implements WebSocketHandler  {
      * @Author: mastermind
      * @Date: 2020-05-17 11:09
      */
-    @Override
     public void afterConnectionClosed(WebSocketSession session, CloseStatus closeStatus) throws Exception {
 
         System.err.println(session.isOpen());
@@ -74,7 +70,6 @@ public class MyWebSocketHandler implements WebSocketHandler  {
      * @Author: mastermind
      * @Date: 2020-05-17 10:50
      */
-    @Override
     public boolean supportsPartialMessages() {
         System.err.println("MyWebSocketHandler----supportsPartialMessages");
         return false;

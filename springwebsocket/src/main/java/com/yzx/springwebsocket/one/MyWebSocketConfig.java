@@ -13,7 +13,6 @@ public class MyWebSocketConfig implements   WebSocketConfigurer {
     @Autowired
     private MyWebSocketHandler myWebSocketHandler;
 
-    @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
 
         registry.addHandler(myWebSocketHandler,"/pos/websocket")

@@ -9,8 +9,6 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-    #\u7F51\u5173\u914D\u7F6E
-
     gateway:
       routes:
         - id: cloud-consumer-order80
@@ -18,5 +16,9 @@ spring:
           predicates:
             - Path=/order/add/**,/order/query/**
 
+        - id: websocketserver
+          uri: lb://websocketserver
+          predicates:
+            - Path=/pos/websocket/**
 
 

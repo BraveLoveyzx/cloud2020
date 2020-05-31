@@ -7,7 +7,7 @@ import java.util.List;
 
 @Component
 public class MySubProtocolCapable implements SubProtocolCapable {
-    @Override
+
     public List<String> getSubProtocols() {
         System.err.println("MySubProtocolCapable---getSubProtocols");
         return null;
