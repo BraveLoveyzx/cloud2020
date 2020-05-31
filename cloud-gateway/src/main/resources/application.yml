@@ -1,3 +1,5 @@
+server:
+  port: 9527
 
 
 spring:
@@ -7,5 +9,14 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-server:
-  port: 9090
+    #\u7F51\u5173\u914D\u7F6E
+
+    gateway:
+      routes:
+        - id: cloud-provider-payment80011
+          uri: lb:\\cloud-consumer-order
+          predicates:
+            - Path=/order/add/**
+
+
+

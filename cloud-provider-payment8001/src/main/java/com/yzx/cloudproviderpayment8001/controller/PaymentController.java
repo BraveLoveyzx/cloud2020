@@ -57,4 +57,30 @@ public class PaymentController {
             return new CommonResult(200, "无记录", null);
         }
     }
+
+
+    /**
+     * @Description: 根据主键查询
+     * @Param:
+     * @return:
+     * @Author: mastermind
+     * @Date: 2020-03-15 18:49
+     */
+    @GetMapping("/ceshigw")
+    public CommonResult ceshigw(Long id) {
+        return new CommonResult(200, "ceshigw:"+id, null);
+    }
+
+
+    /**
+     * @Description: 根据主键查询
+     * @Param:
+     * @return:
+     * @Author: mastermind
+     * @Date: 2020-03-15 18:49
+     */
+    @GetMapping("/ddddd")
+    public CommonResult ddddd() {
+        return new CommonResult(200, "ddddd:", null);
+    }
 }
