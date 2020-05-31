@@ -13,10 +13,10 @@ spring:
 
     gateway:
       routes:
-        - id: cloud-provider-payment80011
-          uri: lb:\\cloud-consumer-order
+        - id: cloud-consumer-order80
+          uri: lb://cloud-consumer-order
           predicates:
-            - Path=/order/add/**
+            - Path=/order/add/**,/order/query/**
 
 
 
