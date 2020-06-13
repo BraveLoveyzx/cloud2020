@@ -17,7 +17,7 @@ public class OrderController {
      * @Author: mastermind
      * @Date: 2020-03-20 07:47
      */
-    @PostMapping("/add")
+    @GetMapping("/add")
     public String add() {
 
         //调用8001新增

@@ -11,7 +11,7 @@
 
     <groupId>com.yzx</groupId>
     <artifactId>cloud-consumer-order80</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2</version>
     <name>cloud-consumer-order80</name>
     <description>Demo project for Spring Boot</description>
 
@@ -87,13 +87,21 @@
 
 
     <build>
-        <finalName>gateway</finalName>
+        <finalName>cloud-consumer-order80</finalName>
 
         <plugins>
 
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
             <plugin>
@@ -109,17 +117,20 @@
                         </goals>
                     </execution>
                 </executions>
-<!--                <configuration>-->
-<!--                    <repository>${docker.registry.name.prefix}/${project.artifactId}</repository>-->
-<!--                    <tag>${project.version}</tag>-->
-<!--                    <username>${dockerfile.username}</username>-->
-<!--                    <password>${dockerfile.password}</password>-->
-<!--                    <buildArgs>-->
-<!--                        <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>-->
-<!--                    </buildArgs>-->
-<!--                </configuration>-->
+                <configuration>
+                    <!--                    <repository>${docker.registry.name.prefix}/${project.artifactId}</repository>-->
+                    <!--                    <username>${dockerfile.username}</username>-->
+                    <!--                    <password>${dockerfile.password}</password>-->
+
+                    <repository>${project.artifactId}</repository>
+                    <tag>${project.version}</tag>
+                    <buildArgs>
+                        <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
             </plugin>
         </plugins>
     </build>
+
 
 </project>
